@@ -1,8 +1,8 @@
 [phases.setup]
-nixPkgs = ["python313", "python313Packages.pip", "ffmpeg"]
+nixPkgs = ["ffmpeg"]
  
 [phases.install]
-cmds = ["python3 -m pip install -r requirements.txt"]
+cmds = ["python3 -m pip install --no-deps -r requirements.txt || python3 -m pip install -r requirements.txt"]
  
 [start]
 cmd = "python3 run_all.py"
